@@ -1,52 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Chriselle ✨</title>
     <style>
         body {
-            background: #000428; 
-            background: linear-gradient(to bottom, #000428, #004e92); 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
+            background: #050505;
+            color: #fff;
             font-family: 'Georgia', serif;
-        }
-        .letter {
-            background: white;
-            width: 85%;
-            max-width: 420px;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
-            border-left: 8px solid #d4af37;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
             text-align: center;
         }
-        h2 { color: #004e92; margin-top: 0; font-size: 1.8rem; }
-        p { line-height: 1.8; color: #333; font-size: 1.1rem; text-align: left; }
-        .heart { color: #e74c3c; font-size: 2.5rem; margin-bottom: 10px; animation: pulse 1.5s infinite; }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
+        .container {
+            z-index: 10;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 30px;
+            border: 2px solid #d4af37; /* Gold border */
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
         }
-        .signature { margin-top: 30px; font-weight: bold; color: #004e92; font-size: 1.2rem; }
+        h1 { font-size: 2.2rem; color: #d4af37; margin-bottom: 10px; }
+        #timer { font-size: 2.8rem; font-weight: bold; margin: 20px 0; color: #fff; text-shadow: 0 0 10px gold; }
+        .btn {
+            background: #d4af37;
+            color: #000;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover { transform: scale(1.1); box-shadow: 0 0 30px #d4af37; }
+        
+        /* Fireworks Animation Effect */
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff;
+            animation: explode 2s infinite;
+        }
+        @keyframes explode {
+            0% { transform: translateY(100vh); opacity: 1; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-20vh) scale(20); opacity: 0; }
+        }
     </style>
 </head>
 <body>
-    <div class="letter">
-        <div class="heart">❤️</div>
-        <h2>Happy New Year, Chriselle!</h2>
-        <p>Dear Chriselle,</p>
-        <p>
-            As we step into 2026, I wanted to tell you how much you mean to me. Every moment with you is a gift, and I can't wait to make more beautiful memories together this year.
-        </p>
-        <p>You make my world brighter. Here's to us and a wonderful year ahead! ✨</p>
-        
-        <div class="signature">Always yours, <br> Jose</div>
-        
-        <a href="index.html" style="display:block; margin-top:20px; color:#aaa; text-decoration:none; font-size:0.8rem;">← Back</a>
+    <div class="container">
+        <h1>Hi Chriselle! ✨</h1>
+        <p>Counting down to our best year yet...</p>
+        <div id="timer">Loading...</div>
+        <a href="notes.html" class="btn">🎁 Open Jose's Message</a>
     </div>
+
+    <script>
+        function updateTimer() {
+            const nextYear = new Date("January 1, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = nextYear - now;
+
+            if (diff <= 0) {
+                document.getElementById("timer").innerHTML = "HAPPY 2026! 🎉";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = `${hours}h ${mins}m ${secs}s`;
+        }
+        setInterval(updateTimer, 1000);
+    </script>
 </body>
 </html>
