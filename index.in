@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #000428; 
+            background: linear-gradient(to bottom, #000428, #004e92); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+        .letter {
+            background: white;
+            width: 85%;
+            max-width: 420px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+            border-left: 8px solid #d4af37;
+            text-align: center;
+        }
+        h2 { color: #004e92; margin-top: 0; font-size: 1.8rem; }
+        p { line-height: 1.8; color: #333; font-size: 1.1rem; text-align: left; }
+        .heart { color: #e74c3c; font-size: 2.5rem; margin-bottom: 10px; animation: pulse 1.5s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+        .signature { margin-top: 30px; font-weight: bold; color: #004e92; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <div class="letter">
+        <div class="heart">❤️</div>
+        <h2>Happy New Year, Chriselle!</h2>
+        <p>Dear Chriselle,</p>
+        <p>
+            As we step into 2026, I wanted to tell you how much you mean to me. Every moment with you is a gift, and I can't wait to make more beautiful memories together this year.
+        </p>
+        <p>You make my world brighter. Here's to us and a wonderful year ahead! ✨</p>
+        
+        <div class="signature">Always yours, <br> Jose</div>
+        
+        <a href="index.html" style="display:block; margin-top:20px; color:#aaa; text-decoration:none; font-size:0.8rem;">← Back</a>
+    </div>
+</body>
+</html>
